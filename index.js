@@ -7,4 +7,4 @@ const model = new PeepModel();
 console.log(model.getPeeps());
 
 const view = new ChitterView();
-//view.displayItems(["Should be seeing this"]);
+view.displayPeeps(["Should be seeing this", "And this too..."]);
