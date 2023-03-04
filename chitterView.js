@@ -2,10 +2,10 @@ class ChitterView {
   displayPeeps(peeps) {
     peeps.forEach((peep) => {
       const newElement = document.createElement("div");
-      newElement.className = "peep";
+      newElement.className = "peep-item";
       newElement.innerText = peep;
 
-      document.querySelector("#main-container").appendChild(newElement);
+      document.querySelector("#main-container").append(newElement);
     });
   }
 }

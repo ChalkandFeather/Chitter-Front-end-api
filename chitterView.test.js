@@ -16,9 +16,9 @@ describe("ChitterView", () => {
     //Act
     view.displayPeeps(["This is a test peep"]);
     //Assert
-    const todoItemElements = document.querySelectorAll("div.peep");
-    expect(todoItemElements.length).toBe(1);
-    expect(todoItemElements[0].innerText).toBe("This is a test peep");
+    const chitterItemElements = document.querySelectorAll("div.peep-item");
+    expect(chitterItemElements.length).toBe(1);
+    expect(chitterItemElements[0].innerText).toBe("This is a test peep");
   });
 });
 
