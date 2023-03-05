@@ -3,51 +3,50 @@
  */
 
 const fs = require("fs");
+const PeepsModel = require("./peepsModel");
 const ChitterView = require("./chitterView");
+const ChitterClient = require("./chitterClient");
+
+jest.mock("./chitterClient.js");
 
 describe("ChitterView", () => {
-  /*const chitterView = new ChitterView()
-  chitterView(['Chitter peep']) //These posts should be displayed on page
-*/
-  it("should display one peep on the page", () => {
-    //Arrange
+  beforeEach(() => {
     document.body.innerHTML = fs.readFileSync("./index.html");
-    const view = new ChitterView();
-    //Act
-    view.displayPeeps(["This is a test peep"]);
-    //Assert
-    const chitterItemElements = document.querySelectorAll("div.peep-item");
-    expect(chitterItemElements.length).toBe(1);
-    expect(chitterItemElements[0].innerText).toBe("This is a test peep");
+    ChitterClient.mockClear();
+  });
+
+  it("displays multiple peeps", () => {
+    module.addPeep('Baby im amazed')
+    visualViewport.displayPeeps();
+    newPeepElement
+    };
   });
 });
 
-/* describe("Chitter view", () => {
-  it("displays 2 paragraphs", () => {
+//Act
+/* model.addPeep("This is the 1st test peep");
+    view.displayPeeps(["This is the 1st test peep"]);
+    //Assert
+    const chitterItemElements = document.querySelectorAll("div.peep-item");
+    expect(chitterItemElements.length).toBe(1);
+    expect(chitterItemElements[0].innerText).toBe("This is the 1st test peep");
+  });
+});
+
+describe("Chitter view", () => {
+  it("clicks the peep button and displays a peep", () => {
     document.body.innerHTML = fs.readFileSync("./index.html");
 
-    const view = new View();
+    const view = new ChitterView();
 
-    expect(document.querySelectorAll("p").length).toBe(2);
-  });
+    const buttonEl = document.querySelector("#show-peep-button");
+    const inputEl = document.querySelector("#peep-input");
 
-  it("adds a new paragraph", () => {
-    //arrange
-    document.body.innerHTML = fs.readFileSync("./index.html");
-    const view = new View();
-    //act
-    view.addParagraph();
-    //assert
-    expect(document.querySelectorAll("p").length).toBe(3);
-  });
+    inputEl.value = "This is a test peep";
 
-  it("clears all paragraphs in the document", () => {
-    //arrange
-    document.body.innerHTML = fs.readFileSync("./index.html");
-    const view = new View();
-    //act
-    view.clearParagraphs();
-    //assert
-    expect(document.querySelectorAll("p").length).toBe(0);
+    buttonEl.click();
+
+    expect(document.querySelector());
   });
-}); */
+});
+*/

@@ -3,6 +3,10 @@ class PeepsModel {
     this.peepsArray = [];
   }
 
+  setPeeps(peeps) {
+    this.peeps = peeps;
+  }
+
   getPeeps() {
     return this.peepsArray;
   }

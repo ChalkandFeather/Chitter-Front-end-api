@@ -7,7 +7,7 @@ describe("PeepsModel", () => {
     expect(model.getPeeps()).toEqual([]);
   });
 
-  it("adds a peep to the list of peeps", () => {
+  it("adds and returns peep to peeps array", () => {
     const model = new PeepsModel();
 
     model.addPeep("Life goes on");
@@ -15,7 +15,7 @@ describe("PeepsModel", () => {
     expect(model.getPeeps()).toEqual(["Life goes on"]);
   });
 
-  it("adds two peeps to the list of peeps", () => {
+  it("adds and returns two peeps to peeps array", () => {
     const model = new PeepsModel();
 
     model.addPeep("Life goes on");
